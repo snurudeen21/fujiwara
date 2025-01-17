@@ -40,6 +40,14 @@ ssize_t read_line(void)
 		}
 
 		args = split_line(line);
+		int args_count = 0;
+
+		// Loop through each element in the args array until NULL is encountered
+		while (args[args_count] != NULL)
+		{
+			args_count++; // Increment the counter
+		}
+		
 		free(line);
 		if (args[0] == NULL)
 		{
@@ -49,13 +57,14 @@ ssize_t read_line(void)
 		
 		if (strcmp(args[0], "angles") == 0)
         	{
-            		angles(args);
+            		int angles(args);
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
             		double result = analyze(args);
-			for (i = 0; 
+			for (i = 0; i < (args_count-1);  i++)
+				
         	}
 		
    		buflen = 0;
