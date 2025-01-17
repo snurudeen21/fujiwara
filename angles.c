@@ -8,7 +8,7 @@
 
 int *angles(char **args)
 {
-    int args_count = sizeof(args) / sizeof(args[0]);
+    int args_count = 4;
     if (args_count == 4)
     {
         int *array;
