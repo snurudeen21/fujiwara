@@ -22,7 +22,7 @@ double *analyze(char **args)
         if (values == NULL)
         {
           perror("Failed to allocate memory");
-          return 1;
+          return NULL;
         }
 
         // Convert strings to floating-point numbers and store in the array
@@ -35,7 +35,7 @@ double *analyze(char **args)
         // Free the allocated memory
         free(values);
 
-        return 0;
+        return NULL;
 }
 
 
