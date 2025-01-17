@@ -16,7 +16,7 @@ double *analyze(char **args)
         args_count++; // Increment the counter
     }
 
-    if (args_count == 11)
+    if (args_count == 10)
     {
         double *values = (double *)malloc(args_count * sizeof(double));
         if (values == NULL)
