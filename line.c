@@ -51,6 +51,11 @@ ssize_t read_line(void)
         	{
             		angles(args);
         	}
+
+		if (strcmp(args[0], "analyze") == 0)
+        	{
+            		analyze(args);
+        	}
 		
    		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
