@@ -54,7 +54,8 @@ ssize_t read_line(void)
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
-            		analyze(args);
+            		double result = analyze(args);
+			for (i = 0; 
         	}
 		
    		buflen = 0;
