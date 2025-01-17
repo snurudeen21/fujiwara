@@ -25,6 +25,7 @@ int _strcmp(char *s1, char *s2);
 char *_pathfinder(char *command);
 char *path_finder(char *command);
 int *angles(char **args);
+double *analyze(char **args);
 
 
 #endif /* SHELL_H */
