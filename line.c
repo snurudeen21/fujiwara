@@ -53,7 +53,7 @@ ssize_t read_line(void)
 		}
     if (args[0] == "Play")
     {
-      printf("I love Playing")
+      printf("I love Playing");
     }
 	}
 	return (bytes);
