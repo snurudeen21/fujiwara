@@ -46,15 +46,18 @@ ssize_t read_line(void)
 			free_buf(args);
 			break;
 		}
-    buflen = 0;
+		
+		if (args[0] == "Play")
+    		{
+      			printf("I love Playing");
+    		}
+		
+   		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
 		{
 			break;
 		}
-    if (args[0] == "Play")
-    {
-      printf("I love Playing");
-    }
+
 	}
 	return (bytes);
 }
