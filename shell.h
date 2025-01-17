@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <math.h>
 
 extern char **environ;
 
