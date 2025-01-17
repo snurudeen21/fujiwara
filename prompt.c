@@ -7,5 +7,5 @@
 
 void my_prompt(void)
 {
-	write(STDOUT_FILENO, "fujiwara ", 9);
+	write(STDOUT_FILENO, "fujiwara ", 10);
 }
