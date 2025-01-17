@@ -9,7 +9,7 @@
 int *angles(char **args)
 {
     int args_count = sizeof(args) / sizeof(args[0]);
-    if args_count == 4
+    if (args_count == 4)
     {
         int *array;
         int start = atoi(args[1]);  // Convert first argument to an integer
@@ -46,5 +46,5 @@ int *angles(char **args)
 
     else
         printf("Arguments must be three, type angles -h for help");
-        return (1);
+        return NULL;
 }
