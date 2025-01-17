@@ -57,14 +57,14 @@ ssize_t read_line(void)
 		
 		if (strcmp(args[0], "angles") == 0)
         	{
-            		int angles(args);
+            		int *angle_of _attack =  angles(args);
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
             		double result = analyze(args);
 			for (i = 0; i < (args_count-1);  i++)
-				
+				Cx = Cx = x0 + x1*round(math.cos(math.radians(a)), 6) + x3*round(math.cos(math.radians(3*a)), 6) + x5*round(math.cos(math.radians(5*a)), 6)	
         	}
 		
    		buflen = 0;
