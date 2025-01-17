@@ -51,7 +51,7 @@ ssize_t read_line(void)
 		{
 			break;
 		}
-    if args[0] == "Play"
+    if (args[0] == "Play")
     {
       printf("I love Playing")
     }
