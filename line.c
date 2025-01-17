@@ -47,10 +47,10 @@ ssize_t read_line(void)
 			break;
 		}
 		
-		if (args[0] == "Play")
-    		{
-      			printf("I love Playing");
-    		}
+		if (strcmp(args[0], "Play") == 0)
+        	{
+            		printf("I love Playing\n");
+        	}
 		
    		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
