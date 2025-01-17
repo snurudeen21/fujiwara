@@ -47,9 +47,9 @@ ssize_t read_line(void)
 			break;
 		}
 		
-		if (strcmp(args[0], "Play") == 0)
+		if (strcmp(args[1], "angles") == 0)
         	{
-            		printf("I love Playing\n");
+            		angles(args);
         	}
 		
    		buflen = 0;
