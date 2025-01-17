@@ -8,7 +8,14 @@
 
 int *angles(char **args)
 {
-    int args_count = 4;
+    int args_count = 0;
+
+    // Loop through each element in the args array until NULL is encountered
+    while (args[args_count] != NULL)
+    {
+        args_count++; // Increment the counter
+    }
+
     if (args_count == 4)
     {
         int *array;
