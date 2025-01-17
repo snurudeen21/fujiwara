@@ -5,41 +5,39 @@
 *
 * Return: line
 */
-int* angles(void)
+
+int *angles(char **args)
 {
-    ssize_t bytes;
-    bytes = read_line
+    if _strlen(args) 
+    int *array;
+    int start = atoi(args[0]);  // Convert first argument to an integer
+    int end = atoi(args[1]);    // Convert second argument to an integer
+    int step = atoi(args[2]);   // Convert third argument to an integer
 
-	char *line = NULL;
-	char **args;
-	size_t buflen = 0;
-	ssize_t bytes;
+    if (step <= 0 || start > end)
+    {
+        printf("Invalid arguments: Ensure step > 0 and start <= end\n");
+        return NULL;
+    }
 
-	while (true)
-	{
-		bytes = getline(&line, &buflen, stdin);
+    int size = 1 + ((end - start) / step); // Calculate array size
+    int counter = 0;
 
-		if (bytes == EOF)
-		{
-			free(line);
-			return (bytes);
-		}
+    // Dynamically allocate memory for the array
+    array = (int *)malloc(size * sizeof(int));
+    if (array == NULL)
+    {
+        perror("Failed to allocate memory");
+        return NULL;
+    }
 
-		if (bytes == -1)
-		{
-			perror("Error in getline");
-			free(line);
-			break;
-		}
-		if (line[bytes - 1] == '\n')
-		{
-			line[bytes - 1] = '\0';
-		}
-		
-		if (_strlen(line) == 0)
-		{
-			free(line);
-			break;
-		}
+    // Fill the array
+    for (int i = start; i <= end; i += step)
+    {
+        *(array+counter) = i;
+        printf("%d ", *(array+counter));
+         counter++;
+    }
 
-		args = split_line(line);
+    return array; // Return the array
+}
