@@ -47,7 +47,7 @@ ssize_t read_line(void)
 			break;
 		}
 		
-		if (strcmp(args[1], "angles") == 0)
+		if (strcmp(args[0], "angles") == 0)
         	{
             		angles(args);
         	}
