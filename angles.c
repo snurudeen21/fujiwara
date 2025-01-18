@@ -44,10 +44,10 @@ int *angles(char **args)
         for (int i = start; i <= end; i += step)
         {
             *(array+counter) = i;
-            printf("%d ", *(array+counter));
+            printf("%d  ", *(array+counter));
             counter++;
         }
-    
+        printf("\n");
         return array; // Return the array
     }
 
