@@ -1,4 +1,5 @@
-void save_to_csv(const char *filename) {
+void save_to_csv(const char *filename) 
+{
     
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
