@@ -29,7 +29,7 @@ int *angles(char **args)
             return NULL;
         }
     
-        int size = 1 + ((end - start) / step); // Calculate array size
+        size = 1 + ((end - start) / step); // Calculate array size
         int counter = 0;
     
         // Dynamically allocate memory for the array
