@@ -60,7 +60,7 @@ ssize_t read_line(void)
 			double Cn[size];
 			double Ck[size];
 		
-            		result = analyze(args);
+            		analyze(args);
 			for (int i = 0; i < size;  i++)
 				{
 					Cx[i] = result[0] + result[1]*cos((*(a+i))*M_PI/180) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
