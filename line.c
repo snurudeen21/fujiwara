@@ -55,10 +55,6 @@ ssize_t read_line(void)
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
-			double Cx[size];
-			double Cy[size];
-			double Cn[size];
-			double Ck[size];
             		double *result = analyze(args);
 			for (int i = 0; i < size;  i++)
 				{
@@ -93,7 +89,7 @@ ssize_t read_line(void)
         	{
 			char filename[30]; // Allocate enough space for a typical filename (255 characters + null terminator)
     
-    			printf("Enter the filename: ");
+    			printf("Enter the filename to save: ");
    	 		scanf("%30s", filename); // Read the filename, limiting input to 255 characters
     			save_to_csv(filename); // Pass the filename to the save_to_csv function
 		}
