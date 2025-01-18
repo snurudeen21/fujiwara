@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 #include <math.h>
 
-extern char **environ;
+extern int args_counter;
 
 void _exec(char **args);
 void free_buf(char **buf);
