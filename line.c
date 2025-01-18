@@ -50,21 +50,20 @@ ssize_t read_line(void)
 		
 		if (strcmp(args[0], "angles") == 0)
         	{
-			int args_count = 0;
-
-			// Loop through each element in the args array until NULL is encountered
-			while (args[args_count] != NULL)
-			{
-				args_count++; // Increment the counter
-			}
             		int *a =  angles(args);
+			args_counter = 0;
+			// Loop through each element in the args array until NULL is encountered
+			while (args[args_counter] != NULL)
+			{
+				args_counter++; // Increment the counter
+			}
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
-			double Cx = 
+			double Cx[args_counter];
             		double result = analyze(args);
-			for (i = 0; i < (args_count-1);  i++)
+			for (i = 0; i < (args_counter-1);  i++)
 				Cx[i] = result[0] + result[1]*cos(a*M_PI/180), 6) + result[2]*round(cos(radians(3*a)), 6) + result[3]*round(cos(radians(5*a)), 6)	
         	}
 		
