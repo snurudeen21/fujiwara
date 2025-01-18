@@ -50,7 +50,7 @@ ssize_t read_line(void)
 		
 		if (strcmp(args[0], "angles") == 0)
         	{
-            		int *a =  angles(args);
+            		a =  angles(args);
 			args_counter = 0;     //args_counter
 			// Loop through each element in the args array until NULL is encountered
 			while (args[args_counter] != NULL)
