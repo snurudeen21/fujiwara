@@ -69,21 +69,21 @@ ssize_t read_line(void)
 			printf("************************************************");
 			for (int j = 0; j < size;  j++)
 				{
-					Cy[j] = result[0] + result[1]*cos((*(a+j))*M_PI/180) + result[2]*(cos(3*(*(a+j))*M_PI/180)) + result[3]*(cos(5*(*(a+j))*M_PI/180));
+					Cy[j] = result[4]*sin((*(a+j))*M_PI/180) + result[5]*(sin(3*(*(a+j))*M_PI/180)) + result[6]*(sin(5*(*(a+j))*M_PI/180));
 					printf("%f  ", Cy[j]);
 				}
 			printf("************************************************");
 			printf("************************************************");
 			for (int k = 0; k < size;  k++)
 				{
-					Cn[k] = result[0] + result[1]*cos((*(a+k))*M_PI/180) + result[2]*(cos(3*(*(a+k))*M_PI/180)) + result[3]*(cos(5*(*(a+k))*M_PI/180));
+					Cn[k] = result[7]*sin((*(a+k))*M_PI/180) + result[8]*(sin(2*(*(a+k))*M_PI/180)) + result[9]*(sin(3*(*(a+k))*M_PI/180));
 					printf("%f  ", Cn[k]);
 				}
 			printf("************************************************");
 			printf("************************************************");
 			for (int m = 0; m < size;  m++)
 				{
-					Ck[m] = result[0] + result[1]*cos((*(m+i))*M_PI/180) + result[2]*(cos(3*(*(m+i))*M_PI/180)) + result[3]*(cos(5*(*(m+i))*M_PI/180));
+					Ck[m] = result[10]*sin((*(a+m))*M_PI/180) + result[11]**(sin(2*(*(a+m))*M_PI/180)) + result[12]*(sin(3*(*(a+m))*M_PI/180)) + result[13]*(sin(5*(*(a+m))*M_PI/180));
 					printf("%f  ", Ck[m]);
 				}
 			printf("************************************************\n");
