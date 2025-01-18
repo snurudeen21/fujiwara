@@ -47,6 +47,7 @@ int *angles(char **args)
             printf("%d ", *(array+counter));
             counter++;
         }
+        *(array+counter) = NaN;
     
         return array; // Return the array
     }
