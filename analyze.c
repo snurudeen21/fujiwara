@@ -35,7 +35,6 @@ double *analyze(char **args)
         double L = *(values+0), B = values[1], HC = values[2], HBR = values[3], C = values[4], CBR = values[5], AT = values[6], AL = values[7], AOD = values[8];
 	
         // Free the allocated memory
-        free(values);
 	printf("Length: %f", L);
 	    
         float C_x_x0[4] = {-0.33, 0.293, 0.0193, 0.682};
