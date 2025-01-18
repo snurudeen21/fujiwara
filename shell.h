@@ -28,6 +28,7 @@ char *_pathfinder(char *command);
 char *path_finder(char *command);
 int *angles(char **args);
 double *analyze(char **args);
+void save_to_csv(const char *filename);
 
 
 #endif /* SHELL_H */
