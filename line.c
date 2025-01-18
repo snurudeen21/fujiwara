@@ -51,20 +51,14 @@ ssize_t read_line(void)
 		if (strcmp(args[0], "angles") == 0)
         	{
             		a =  angles(args);
-			args_counter = 0;     //args_counter
-			// Loop through each element in the args array until NULL is encountered
-			while (args[args_counter] != NULL)
-			{
-				args_counter++; // Increment the counter
-			}
-			printf("%d", args_counter);
+			printf("%d",size);
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
-			//double Cx[args_counter];
+			//double Cx[size];
             		double *result = analyze(args);
-			/*for (int i = 0; i < (args_counter-1);  i++)
+			/*for (int i = 0; i < size;  i++)
 				{
 					Cx[i] = result[0] + result[1]*cos((*(a+i)*M_PI/180)) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
 					printf("%f\n", Cx[i]);
