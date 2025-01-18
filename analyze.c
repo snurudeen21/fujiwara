@@ -40,8 +40,6 @@ double *analyze(char **args)
 	double AT = values[6];
 	double AL = values[7]; 
 	double AOD = values[8];
-	
-	printf("Length: %f", B);
 	    
         float C_x_x0[4] = {-0.33, 0.293, 0.0193, 0.682};
         float C_x_x1[8] = {-1.353, 1.7, 2.87, -0.463, -0.57, -6.64, -0.0123, 0.0202};
@@ -183,14 +181,11 @@ double *analyze(char **args)
 		 + C_k_k5[3]*(AT/AL)
 		 + C_k_k5[4]*(L/B)
 		 + C_k_k5[5]*(AL/(L*B));
-
-	printf("%.10f\n", k5); 
 	    
         double *result;
         result = (double *)malloc(14 * sizeof(double));
         
         *(result+0) = x0;
-        printf("%f\n", result[0]);
         *(result+1) = x1;
         *(result+2) = x3;
         *(result+3) = x5;
@@ -204,7 +199,6 @@ double *analyze(char **args)
         *(result+11) = k2;
         *(result+12) = k3;
         *(result+13) = k5;
-        printf("%f\n", *(result+13));
         
         return result;
 }
