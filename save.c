@@ -1,3 +1,5 @@
+#include "shell.h"
+
 void save_to_csv(const char *filename) 
 {
     
