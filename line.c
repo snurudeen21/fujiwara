@@ -97,10 +97,7 @@ ssize_t read_line(void)
     			printf("Enter the filename to save: ");
    	 		scanf("%30s", filename); // Read the filename, limiting input to 255 characters
     			save_to_csv(filename); // Pass the filename to the save_to_csv function
-		}
-
-    return 0;
-			
+		}	
 		
    		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
