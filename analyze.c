@@ -24,15 +24,22 @@ double *analyze(char **args)
           perror("Failed to allocate memory");
           return NULL;
         }
-
         // Convert strings to floating-point numbers and store in the array
         for (int i = 1; i < args_count; i++)
         {
-          values[i] = strtod(args[i], NULL);
-          printf("String: %s, Converted to double: %f\n", args[i], values[i]);
+          values[i-1] = strtod(args[i], NULL);
+          printf("String: %s, Converted to double: %f\n", args[i], values[j]);
         }
 
-        double L = *(values+0), B = values[1], HC = values[2], HBR = values[3], C = values[4], CBR = values[5], AT = values[6], AL = values[7], AOD = values[8];
+        double L = *(values+0); 
+	double B = values[1]; 
+	double HC = values[2];
+	double HBR = values[3]; 
+	double C = values[4];
+	double CBR = values[5]; 
+	double AT = values[6];
+	double AL = values[7]; 
+	double AOD = values[8];
 	
 	printf("Length: %f", L);
 	    
