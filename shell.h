@@ -13,7 +13,7 @@
 
 extern int size;
 extern int *a;
-extern double *result
+extern double *result;
 
 void _exec(char **args);
 void free_buf(char **buf);
