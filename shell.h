@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 #include <math.h>
 
-extern int args_counter;
+extern int size;
 extern int *a;
 
 void _exec(char **args);
