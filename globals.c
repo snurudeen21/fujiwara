@@ -1,2 +1,2 @@
 int *a;
-int args_counter; 
+int size; 
