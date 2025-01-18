@@ -91,6 +91,14 @@ ssize_t read_line(void)
 
 		if (strcmp(args[0], "save") == 0)
         	{
+			char filename[30]; // Allocate enough space for a typical filename (255 characters + null terminator)
+    
+    			printf("Enter the filename: ");
+   	 		scanf("%30s", filename); // Read the filename, limiting input to 255 characters
+    			save_to_csv(filename); // Pass the filename to the save_to_csv function
+		}
+
+    return 0;
 			
 		
    		buflen = 0;
