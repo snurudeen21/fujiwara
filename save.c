@@ -42,4 +42,6 @@ void save_to_csv(const char *filename)
 
     fclose(file);
     printf("Data successfully saved to %s\n", filename);
+
+    return;
 }
