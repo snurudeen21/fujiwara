@@ -32,7 +32,7 @@ double *analyze(char **args)
           printf("String: %s, Converted to double: %f\n", args[i], values[i]);
         }
 
-        double L = values[0], B = values[1], HC = values[2], HBR = values[3], C = values[4], CBR = values[5], AT = values[6], AL = values[7], AOD = values[8];
+        double L = *(values+0), B = values[1], HC = values[2], HBR = values[3], C = values[4], CBR = values[5], AT = values[6], AL = values[7], AOD = values[8];
 	
         // Free the allocated memory
         free(values);
