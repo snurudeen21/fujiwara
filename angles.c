@@ -3,7 +3,7 @@
 /**
 * angles - read angles
 *
-* Return: line
+* Return: angles
 */
 
 int *angles(char **args)
@@ -47,7 +47,6 @@ int *angles(char **args)
             printf("%d ", *(array+counter));
             counter++;
         }
-        *(array+counter) = NaN;
     
         return array; // Return the array
     }
