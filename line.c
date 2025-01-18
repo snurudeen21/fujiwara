@@ -51,18 +51,42 @@ ssize_t read_line(void)
 		if (strcmp(args[0], "angles") == 0)
         	{
             		a =  angles(args);
-			printf("%d",size);
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
 			double Cx[size];
+			double Cy[size];
+			double Cn[size];
+			double Ck[size];
             		double *result = analyze(args);
 			for (int i = 0; i < size;  i++)
 				{
 					Cx[i] = result[0] + result[1]*cos((*(a+i))*M_PI/180) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
-					printf("%f\n", Cx[i]);
+					printf("%f  ", Cx[i]);
 				}
+			printf("************************************************");
+			printf("************************************************");
+			for (int j = 0; j < size;  j++)
+				{
+					Cy[j] = result[0] + result[1]*cos((*(a+j))*M_PI/180) + result[2]*(cos(3*(*(a+j))*M_PI/180)) + result[3]*(cos(5*(*(a+j))*M_PI/180));
+					printf("%f  ", Cy[j]);
+				}
+			printf("************************************************");
+			printf("************************************************");
+			for (int k = 0; k < size;  k++)
+				{
+					Cn[k] = result[0] + result[1]*cos((*(a+k))*M_PI/180) + result[2]*(cos(3*(*(a+k))*M_PI/180)) + result[3]*(cos(5*(*(a+k))*M_PI/180));
+					printf("%f  ", Cn[k]);
+				}
+			printf("************************************************");
+			printf("************************************************");
+			for (int m = 0; m < size;  m++)
+				{
+					Ck[m] = result[0] + result[1]*cos((*(m+i))*M_PI/180) + result[2]*(cos(3*(*(m+i))*M_PI/180)) + result[3]*(cos(5*(*(m+i))*M_PI/180));
+					printf("%f  ", Ck[m]);
+				}
+			printf("************************************************\n");
         	}
 		
    		buflen = 0;
