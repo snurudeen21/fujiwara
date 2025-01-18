@@ -61,13 +61,13 @@ ssize_t read_line(void)
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
-			double Cx[args_counter];
+			//double Cx[args_counter];
             		double *result = analyze(args);
-			for (int i = 0; i < (args_counter-1);  i++)
+			/*for (int i = 0; i < (args_counter-1);  i++)
 				{
 					Cx[i] = result[0] + result[1]*cos((*(a+i)*M_PI/180)) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
 					printf("%f\n", Cx[i]);
-				}
+				}*/
         	}
 		
    		buflen = 0;
