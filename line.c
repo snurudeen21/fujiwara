@@ -55,6 +55,11 @@ ssize_t read_line(void)
 
 		if (strcmp(args[0], "analyze") == 0)
         	{
+			double Cx[size];
+			double Cy[size];
+			double Cn[size];
+			double Ck[size];
+		
             		double *result = analyze(args);
 			for (int i = 0; i < size;  i++)
 				{
