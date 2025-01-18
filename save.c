@@ -10,7 +10,7 @@ void save_to_csv(const char *filename)
     }
 
     // Write header row
-    fprintf(file, "Cx,Cy,Cn,Ck\n");
+    fprintf(file, "a,Cx,Cy,Cn,Ck\n");
     
     double Cx[size];
     double Cy[size];
@@ -37,7 +37,7 @@ void save_to_csv(const char *filename)
 		
     // Write data rows
     for (int c = 0; c < size; c++) {
-        fprintf(file, "%f,%f,%f,%f\n", Cx[c], Cy[c], Cn[c], Ck[c]);
+        fprintf(file, "%d,%f,%f,%f,%f\n", a[c], Cx[c], Cy[c], Cn[c], Ck[c]);
     }
 
     fclose(file);
