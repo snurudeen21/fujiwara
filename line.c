@@ -63,8 +63,8 @@ ssize_t read_line(void)
         	{
 			double Cx[args_counter];
             		double *result = analyze(args);
-			for (i = 0; i < (args_counter-1);  i++)
-				Cx[i] = result[0] + result[1]*cos(*(a+i)*M_PI/180)) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
+			for (int i = 0; i < (args_counter-1);  i++)
+				Cx[i] = result[0] + result[1]*cos((*(a+i)*M_PI/180)) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
 				printf("%f\n", Cx[i]);
         	}
 		
