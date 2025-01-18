@@ -6,7 +6,7 @@
 * Return: analyzed data
 */
 
-double analyze(char **args)
+double *analyze(char **args)
 {
     int args_count = 0;
 
@@ -22,7 +22,7 @@ double analyze(char **args)
         if (values == NULL)
         {
           perror("Failed to allocate memory");
-          return NaN;
+          return NAN;
         }
 
         // Convert strings to floating-point numbers and store in the array
@@ -60,8 +60,8 @@ double analyze(char **args)
 
         double x0 = C_x_x0[0] + C_x_x0[1]*((B*HBR)/AT) + C_x_x0[2]*(C/HC) + C_x_x0[3]*pow(AOD/L,2);
         double x1 = C_x_x1[0] + C_x_x1[1]*(AL/(L*B)) + C_x_x1[2]*((L*HC)/AL) + C_x_x1[3]*((L*HBR)/AL) + C_x_x1[4]*(AOD/AL) + C_x_x1[5]*(AT/(L*B)) + C_x_x1[6]*pow(pow((AT/L),2),-1) + C_x_x1[7]*pow((C/L),-1);
-        double x3 = C_x_x3[0] + C_x_x3[1]*(pow((L*HBR)/AL),-1) + C_x_x3[2]*(AL/AT) + C_x_x3[3]*((L*HC)/AL) + C_x_x3[4]*(AOD/AL) + C_x_x3[5]*pow((AOD/L),2) + C_x_x3[6]*(CBR/C) + C_x_x3[7]*(C/B);
-        double x5 = C_x_x5[0] + C_x_x5[1]*(AOD/AL)**-1 + C_x_x5[2]*(CBR/L) + C_x_x5[3]*(HBR/(L*B));
+        double x3 = C_x_x3[0] + C_x_x3[1]*pow(((L*HBR)/AL),-1) + C_x_x3[2]*(AL/AT) + C_x_x3[3]*((L*HC)/AL) + C_x_x3[4]*(AOD/AL) + C_x_x3[5]*pow((AOD/L),2) + C_x_x3[6]*(CBR/C) + C_x_x3[7]*(C/B);
+        double x5 = C_x_x5[0] + C_x_x5[1]*pow((AOD/AL),-1) + C_x_x5[2]*(CBR/L) + C_x_x5[3]*(HBR/(L*B));
         
         double y1 = C_y_y1[0] + C_y_y1[1]*(C/L) + C_y_y1[2]*(CBR/L) + C_y_y1[3]*pow((AOD/AL),-1) + C_y_y1[4]*(CBR/HC) + C_y_y1[5]*pow(((B*HBR)/AT),1);
         double y3 = C_y_y3[0] + C_y_y3[1]*(AT/(L*B)) + C_y_y3[2]*((L*HC)/AT) + C_y_y3[3]*(CBR/L) + C_y_y3[4]*pow((HBR/B),-1) + C_y_y3[5]*(AOD/AL) + C_y_y3[6]*pow(((B*HBR)/AT),-1);
@@ -72,8 +72,8 @@ double analyze(char **args)
         double n3 = C_n_n3[0] + C_n_n3[1]*(AOD/L) + C_n_n3[2]*pow(((CBR*HBR)/AT),-1) + C_n_n3[3]*(HBR/L);
         
         double k1 = C_k_k1[0] + C_k_k1[1]*(HBR/L) + C_k_k1[2]*(CBR/(L*B)) + C_k_k1[3]*((L*HC)/AT) + C_k_k1[4]*(CBR/L) + C_k_k1[5]*(CBR/L) + C_k_k1[6]*pow((HBR/B),-1) + C_k_k1[7]*pow((pow((CBR/B),2)),-1) + C_k_k1[8]*pow((C/L),-1);
-        double k2 = C_k_k2[0] + C_k_k2[1]*pow((HBR/C),-1) + C_k_k2[2]*pow((CBR/B),2) + C_k_k2[3]*pow(((L*HC)/AT),-1) + C_k_k2[4]*(CBR/L) + C_k_k2[5]*(HBR*CBR/AT) + C_k_k2[6]*pow((C/L),-1) + C_k_k2[7]*pow((pow(AT/L),2),-1);
-        double k3 = C_k_k3[0] + C_k_k3[1]*pow((pow(CBR/B),2),-1) + C_k_k3[2]*(CBR/L) + C_k_k3[3]*(C/L) + C_k_k3[4]*(CBR/(L*B)) + C_k_k3[5]*pow((AT/(L*B)),-1) + C_k_k3[6]*pow((AOD/L),2);
+        double k2 = C_k_k2[0] + C_k_k2[1]*pow((HBR/C),-1) + C_k_k2[2]*pow((CBR/B),2) + C_k_k2[3]*pow(((L*HC)/AT),-1) + C_k_k2[4]*(CBR/L) + C_k_k2[5]*(HBR*CBR/AT) + C_k_k2[6]*pow((C/L),-1) + C_k_k2[7]*pow((pow((AT/L),2)),-1);
+        double k3 = C_k_k3[0] + C_k_k3[1]*pow((pow((CBR/B),2)),-1) + C_k_k3[2]*(CBR/L) + C_k_k3[3]*(C/L) + C_k_k3[4]*(CBR/(L*B)) + C_k_k3[5]*pow((AT/(L*B)),-1) + C_k_k3[6]*pow((AOD/L),2);
         double k5 = C_k_k5[0] + C_k_k5[1]*pow(((L*HC)/AT),-1) + C_k_k5[2]*pow((AOD/AT),-1) + C_k_k5[3]*pow((HBR/CBR),-1) + C_k_k5[4]*pow((C/L),-1) + C_k_k5[5]*(AOD/(L*B));
 
         double result[14] = {x0, x1, x3, x5, y1, y3, y5, n1, n2, n3, k1, k2, k3, k5};
@@ -81,5 +81,6 @@ double analyze(char **args)
 }
     else
         printf("Arguments must be three, type angles -h for help");
-        return NaN;
+        return NAN;
+
 }
