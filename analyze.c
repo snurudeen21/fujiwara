@@ -22,7 +22,7 @@ double *analyze(char **args)
         if (values == NULL)
         {
           perror("Failed to allocate memory");
-          return (0.000000000);
+          return NULL;
         }
 
         // Convert strings to floating-point numbers and store in the array
@@ -76,11 +76,28 @@ double *analyze(char **args)
         double k3 = C_k_k3[0] + C_k_k3[1]*pow((pow((CBR/B),2)),-1) + C_k_k3[2]*(CBR/L) + C_k_k3[3]*(C/L) + C_k_k3[4]*(CBR/(L*B)) + C_k_k3[5]*pow((AT/(L*B)),-1) + C_k_k3[6]*pow((AOD/L),2);
         double k5 = C_k_k5[0] + C_k_k5[1]*pow(((L*HC)/AT),-1) + C_k_k5[2]*pow((AOD/AT),-1) + C_k_k5[3]*pow((HBR/CBR),-1) + C_k_k5[4]*pow((C/L),-1) + C_k_k5[5]*(AOD/(L*B));
 
-        double *result[14] = {x0, x1, x3, x5, y1, y3, y5, n1, n2, n3, k1, k2, k3, k5};
+        double *result;
+        result = (double *)malloc(14 * sizeof(double));
+        
+        *(result+0) = x0;
+        *(result+1) = x1;
+        *(result+2) = x3;
+        *(result+3) = x5;
+        *(result+4) = y1;
+        *(result+5) = y3;
+        *(result+6) = y5;
+        *(result+7) = n1;
+        *(result+8) = n2;
+        *(result+9) = n3;
+        *(result+10) = k1;
+        *(result+11) = k2;
+        *(result+12) = k3;
+        *(result+13) = k5;
+        
         return result;
 }
     else
         printf("Arguments must be three, type angles -h for help");
-        return (0.0000000);
+        return NULL;
 
 }
