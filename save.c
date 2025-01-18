@@ -13,9 +13,9 @@ void save_to_csv(const char *filename)
     fprintf(file, "Cx,Cy,Cn,Ck\n");
     
     double Cx[size];
-	double Cy[size];
-	double Cn[size];
-	double Ck[size];
+    double Cy[size];
+    double Cn[size];
+    double Ck[size];
 
     for (int i = 0; i < size;  i++)
     {
