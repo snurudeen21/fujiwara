@@ -57,6 +57,7 @@ ssize_t read_line(void)
 			{
 				args_counter++; // Increment the counter
 			}
+			printf("%d", args_counter);
         	}
 
 		if (strcmp(args[0], "analyze") == 0)
