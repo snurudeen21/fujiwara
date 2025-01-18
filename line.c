@@ -88,6 +88,10 @@ ssize_t read_line(void)
 				}
 			printf("************************************************\n");
         	}
+
+		if (strcmp(args[0], "save") == 0)
+        	{
+			
 		
    		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
