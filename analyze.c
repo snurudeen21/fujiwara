@@ -80,6 +80,7 @@ double *analyze(char **args)
         result = (double *)malloc(14 * sizeof(double));
         
         *(result+0) = x0;
+        printf("%f", *(result+0));
         *(result+1) = x1;
         *(result+2) = x3;
         *(result+3) = x5;
@@ -93,6 +94,7 @@ double *analyze(char **args)
         *(result+11) = k2;
         *(result+12) = k3;
         *(result+13) = k5;
+        printf("%f", *(result+13));
         
         return result;
 }
