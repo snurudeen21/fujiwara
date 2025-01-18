@@ -177,7 +177,9 @@ double *analyze(char **args)
 		 + C_k_k5[3]*(AT/AL)
 		 + C_k_k5[4]*(L/B)
 		 + C_k_k5[5]*(AL/(L*B));
-        
+
+	printf("%.10f", k5); 
+	    
         double *result;
         result = (double *)malloc(14 * sizeof(double));
         
