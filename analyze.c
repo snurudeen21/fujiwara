@@ -182,25 +182,25 @@ double *analyze(char **args)
 		 + C_k_k5[4]*(L/B)
 		 + C_k_k5[5]*(AL/(L*B));
 	    
-        double *result;
-        result = (double *)malloc(14 * sizeof(double));
+        double *answer;
+        answer = (double *)malloc(14 * sizeof(double));
         
-        *(result+0) = x0;
-        *(result+1) = x1;
-        *(result+2) = x3;
-        *(result+3) = x5;
-        *(result+4) = y1;
-        *(result+5) = y3;
-        *(result+6) = y5;
-        *(result+7) = n1;
-        *(result+8) = n2;
-        *(result+9) = n3;
-        *(result+10) = k1;
-        *(result+11) = k2;
-        *(result+12) = k3;
-        *(result+13) = k5;
+        *(answer+0) = x0;
+        *(answer+1) = x1;
+        *(answer+2) = x3;
+        *(answer+3) = x5;
+        *(answer+4) = y1;
+        *(answer+5) = y3;
+        *(answer+6) = y5;
+        *(answer+7) = n1;
+        *(answer+8) = n2;
+        *(answer+9) = n3;
+        *(answer+10) = k1;
+        *(answer+11) = k2;
+        *(answer+12) = k3;
+        *(answer+13) = k5;
         
-        return result;
+        return answer;
 }
     else
         printf("Arguments must be three, type angles -h for help");
