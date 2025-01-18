@@ -28,7 +28,7 @@ double *analyze(char **args)
         for (int i = 1; i < args_count; i++)
         {
           values[i-1] = strtod(args[i], NULL);
-          printf("String: %s, Converted to double: %f\n", args[i], values[j]);
+          printf("String: %s, Converted to double: %f\n", args[i], values[i-1]);
         }
 
         double L = *(values+0); 
