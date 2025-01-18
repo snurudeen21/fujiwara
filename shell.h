@@ -12,6 +12,7 @@
 #include <math.h>
 
 extern int args_counter;
+extern int *a;
 
 void _exec(char **args);
 void free_buf(char **buf);
