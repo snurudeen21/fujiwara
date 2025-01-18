@@ -83,7 +83,7 @@ ssize_t read_line(void)
 			printf("************************************************");
 			for (int m = 0; m < size;  m++)
 				{
-					Ck[m] = result[10]*sin((*(a+m))*M_PI/180) + result[11]**(sin(2*(*(a+m))*M_PI/180)) + result[12]*(sin(3*(*(a+m))*M_PI/180)) + result[13]*(sin(5*(*(a+m))*M_PI/180));
+					Ck[m] = result[10]*sin((*(a+m))*M_PI/180) + result[11]*(sin(2*(*(a+m))*M_PI/180)) + result[12]*(sin(3*(*(a+m))*M_PI/180)) + result[13]*(sin(5*(*(a+m))*M_PI/180));
 					printf("%f  ", Ck[m]);
 				}
 			printf("************************************************\n");
