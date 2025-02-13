@@ -1,4 +1,4 @@
-# fujiwara by C Language
+# Fujiwara by C Language
 Estimation of Wind Forces and Moments Acting on Ships
 This is a CLI that implements the methods described in fujiwara 2001
 
@@ -47,7 +47,6 @@ The program reads input data from the i/o stream  and outputs the estimated coef
   save file_name
 
 ### Example Command
-
 ```sh
 angles 0 180 10
 analyze 117 17.9 6.71 17.5 0.85 4.6 316 1337 451
