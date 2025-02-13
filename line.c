@@ -12,8 +12,8 @@ ssize_t read_line(void)
 	size_t buflen = 0;
 	ssize_t bytes;
 
-	while (true)
-	{
+	//while (true)
+	//{
 		bytes = getline(&line, &buflen, stdin);
 
 		if (bytes == EOF)
@@ -26,85 +26,75 @@ ssize_t read_line(void)
 		{
 			perror("Error in getline");
 			free(line);
-			break;
+			//break;
 		}
-		if (line[bytes - 1] == '\n')
+
+		if (bytes == 1 && line[bytes - 1] == '\n')
+		{
+			free(line);
+			return (bytes);
+		}
+
+		else
 		{
 			line[bytes - 1] = '\0';
 		}
 		
-		if (_strlen(line) == 0)
+		if (strlen(line) == 0)
 		{
 			free(line);
-			break;
+			//break;
 		}
 
+		//tokenize
 		args = split_line(line);
 		
 		free(line);
 		if (args[0] == NULL)
 		{
 			free_buf(args);
-			break;
+			return (bytes);
+			//break;
 		}
+
+		/*if (strcmp(args[0], "\n") == 0)
+		{
+			return (bytes);
+		}*/
+
+		if ((strcmp(args[0], "angles") != 0) && (strcmp(args[0], "analyze") != 0) && (strcmp(args[0], "save") != 0) && (strcmp(args[0], "plot") != 0))
+			{
+            		printf("List of Commands Available: angles, analyze, save and plot\nType: command_name -h to see usage\n");
+        	}
 		
 		if (strcmp(args[0], "angles") == 0)
         	{
             		a =  angles(args);
         	}
 
+
 		if (strcmp(args[0], "analyze") == 0)
-        	{
-			double Cx[size];
-			double Cy[size];
-			double Cn[size];
-			double Ck[size];
-		
-            		result = analyze(args);
-			for (int i = 0; i < size;  i++)
-				{
-					Cx[i] = result[0] + result[1]*cos((*(a+i))*M_PI/180) + result[2]*(cos(3*(*(a+i))*M_PI/180)) + result[3]*(cos(5*(*(a+i))*M_PI/180));
-					printf("%f  ", Cx[i]);
-				}
-			printf("************************************************");
-			printf("************************************************");
-			for (int j = 0; j < size;  j++)
-				{
-					Cy[j] = result[4]*sin((*(a+j))*M_PI/180) + result[5]*(sin(3*(*(a+j))*M_PI/180)) + result[6]*(sin(5*(*(a+j))*M_PI/180));
-					printf("%f  ", Cy[j]);
-				}
-			printf("************************************************");
-			printf("************************************************");
-			for (int k = 0; k < size;  k++)
-				{
-					Cn[k] = result[7]*sin((*(a+k))*M_PI/180) + result[8]*(sin(2*(*(a+k))*M_PI/180)) + result[9]*(sin(3*(*(a+k))*M_PI/180));
-					printf("%f  ", Cn[k]);
-				}
-			printf("************************************************");
-			printf("************************************************");
-			for (int m = 0; m < size;  m++)
-				{
-					Ck[m] = result[10]*sin((*(a+m))*M_PI/180) + result[11]*(sin(2*(*(a+m))*M_PI/180)) + result[12]*(sin(3*(*(a+m))*M_PI/180)) + result[13]*(sin(5*(*(a+m))*M_PI/180));
-					printf("%f  ", Ck[m]);
-				}
-			printf("************************************************\n");
-        	}
+        {
+			
+            result = analyze(args);
+        }
 
 		if (strcmp(args[0], "save") == 0)
-        	{
-			char filename[30]; // Allocate enough space for a typical filename (255 characters + null terminator)
-    
-    			printf("Enter the filename to save: ");
-   	 		scanf("%30s", filename); // Read the filename, limiting input to 255 characters
-    			save_to_csv(filename); // Pass the filename to the save_to_csv function
-		}	
-		
-   		buflen = 0;
-		if (isatty(STDIN_FILENO) != 0)
-		{
-			break;
+        {
+    		save_to_csv(args); // Pass the filename to the save_to_csv function
 		}
 
-	}
+		if (strcmp(args[0], "plot") == 0)
+        {
+    		plot_with_gnuplot(args); // Pass the filename to the save_to_csv function
+		}
+		
+   		buflen = 0;
+		//if (isatty(STDIN_FILENO) != 0)
+		//{
+			//break;
+		//}
+
+	//}
 	return (bytes);
 }

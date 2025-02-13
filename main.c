@@ -23,7 +23,7 @@ int main(void)
 		if (bytes == EOF)
 		{
 			is_pipe = true;
-			exit(0);
+			//exit(0);
 		}
 	}
 	return (0);

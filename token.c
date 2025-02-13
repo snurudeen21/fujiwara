@@ -10,14 +10,14 @@
 char **split_line(char *line)
 {
 	int length = 0;
-	char **tokens = malloc(sizeof(char *) * _strlen(line));
+	char **tokens = malloc(sizeof(char *) * strlen(line));
 
 	char *delimiters = " \n\t\r";
 	char *token = strtok(line, delimiters);
 
 	while (token != NULL)
 	{
-		tokens[length] = _strdup(token);
+		tokens[length] = strdup(token);
 		length++;
 
 		token = strtok(NULL, delimiters);
