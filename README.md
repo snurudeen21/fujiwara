@@ -34,8 +34,13 @@ To compile and run the program, you need to have a C compiler installed on your 
 ## Usage
 
 The program reads input data from the i/o stream  and outputs the estimated coefficient of wind forces and moments at the attack angles The commands that run the code are discussed herein
+```sh
+  ##Launch the program by typing
+  .\nsh.exe on Windows
+  ./nsh.exe on Linux
 
 ### Command Line Arguments
+  ```sh
   angles start end step
   analyze L B HC HBR C CBR AT AL AOD
   plot  (takes no arguments)
